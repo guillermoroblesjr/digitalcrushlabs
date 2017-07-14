@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import _isEqual from 'lodash.isequal'
 import { IndexLink, Link } from 'react-router'
+import { Component as Nav } from 'components/Nav/async'
+import { Component as Footer } from 'components/Footer/async'
 import './CoreLayout.scss'
 
 export default class CoreLayout extends Component {
@@ -30,15 +32,15 @@ export default class CoreLayout extends Component {
   render = () => {
     if (this.shouldRenderNull()) return null
     return (
-      <div className="CoreLayout container text-center">
-        <h1>React Redux Starter Kit</h1>
-        <IndexLink to="/" activeClassName="page-layout__nav-item--active">Home</IndexLink>
-        {` · `}
-        <Link to="/counter" activeClassName="page-layout__nav-item--active">Counter</Link>
-        {` · `}
-        <Link to="/example" activeClassName="page-layout__nav-item--active">Example</Link>
-        <div className="page-layout__viewport">
-          {this.props.children}
+      <div className="CoreLayout">
+        {/* <!-- This will hide any overflow and background is black -->*/}
+        <div className="body-wrapper">
+          {/* <!-- Body background color -->*/}
+          <div className="body-wrapper2">
+            <Nav />
+            {this.props.children}
+            <Footer />
+          </div>
         </div>
       </div>
     )

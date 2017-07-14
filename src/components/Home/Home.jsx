@@ -1,6 +1,12 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import _isEqual from 'lodash.isequal'
-import DuckImage from 'static/img/Duck.jpg'
+import { Component as Carousel } from 'components/Carousel/async'
+import { Component as Marketing1 } from 'components/Marketing1/async'
+import { Component as MobileCompatible } from 'components/MobileCompatible/async'
+import { Component as ThreeSixtyDegreeView } from 'components/ThreeSixtyDegreeView/async'
+import { Component as LandingPage } from 'components/LandingPage/async'
+import { STATIC_ASSETS } from 'constants/basePath'
 import './Home.scss'
 
 export default class Home extends Component {
@@ -29,8 +35,22 @@ export default class Home extends Component {
     if (this.shouldRenderNull()) return null
     return (
       <div className="Home">
-        <h4>Welcome!</h4>
-        <img alt="This is a duck, because Redux!" className="duck" src={DuckImage} />
+        <Carousel />
+
+        {/* <!-- Marketing messaging and featurettes --> */}
+        {/* <!-- Wrap the rest of the page in another container to center all the content. --> */}
+
+        <div className="container marketing">
+          <Marketing1 />
+          {/* <!-- START THE FEATURETTES --> */}
+          <hr className="featurette-divider" />
+          <MobileCompatible />
+          <hr className="featurette-divider" />
+          <ThreeSixtyDegreeView />
+          <hr className="featurette-divider" />
+          <LandingPage />
+          <hr className="featurette-divider" />
+        </div>
       </div>
     )
   }

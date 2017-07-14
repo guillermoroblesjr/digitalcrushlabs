@@ -1,5 +1,8 @@
 @import 'base';
-@import '~bootstrap/scss/bootstrap.scss';
+// bootstrap 3
+@import '~bootstrap/dist/css/bootstrap.css';
+// bootstrap 4
+// @import '~bootstrap/scss/bootstrap.scss';
 
 // Some best-practice CSS that's useful for most apps
 // Just remove them if they're not what you want
@@ -18,4 +21,705 @@ body {
 *:before,
 *:after {
   box-sizing: inherit;
+}
+
+//////////////////////////////////////////////////////////////////////
+// <link href="src/css/carousel.css" rel="stylesheet">
+
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  padding-bottom: 40px;
+  color: #5a5a5a;
+}
+
+
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper {
+  position: relative;
+  z-index: 15;
+}
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  margin-bottom: 60px;
+
+  /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+  margin-top: -90px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 500px;
+  background-color: #777;
+}
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 500px;
+}
+
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Pad the edges of the mobile views a bit */
+.marketing {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+
+  /* Remove the edge padding needed for mobile */
+  .marketing {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Navbar positioning foo */
+  .navbar-wrapper {
+    margin-top: 20px;
+  }
+  /* The navbar becomes detached from the top, so we round the corners */
+  .navbar-wrapper .navbar {
+    border-radius: 4px;
+  }
+
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+
+}
+
+@media (min-width: 992px) {
+  .featurette-heading {
+    margin-top: 120px;
+  }
+}
+
+//////////////////////////////////////////////////////////////////////
+// <link href="src/css/style.css" rel="stylesheet">
+
+body{
+	font: 20px 'open_sansregular', Georgia, serif;
+	background-color: #f6f6f6;
+}
+.body-wrapper{
+	overflow: hidden;
+	background-color: #080808;
+}
+.body-wrapper{
+	background-color: #f6f6f6;
+}
+/* [ Navbar Styling ] */
+.container.navbar-full{
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 15px;
+}
+.navbar-wrapper {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0px;
+}
+.container > .navbar-header, .container > .navbar-collapse{
+	margin-left: 0px;
+	margin-right: 0px;
+}
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+	border: solid 2px white;
+	-moz-border-radius-topleft: 25px;
+	-moz-border-radius-topright:5px;
+	-moz-border-radius-bottomleft:5px;
+	-moz-border-radius-bottomright:25px;
+	-webkit-border-top-left-radius:25px;
+	-webkit-border-top-right-radius:5px;
+	-webkit-border-bottom-left-radius:5px;
+	-webkit-border-bottom-right-radius:25px;
+	border-top-left-radius:25px;
+	border-top-right-radius:5px;
+	border-bottom-left-radius:5px;
+	border-bottom-right-radius:25px;
+	/* Required for IE8 */
+	border-radius: 25px 5px 25px 5px; /*(top-left, top-right, bottom-right, bottom-left)*/
+}
+.navbar-collapse.no-height{
+	max-height: 100%;
+}
+.navbar-nav {
+	float: right;
+}
+@media (max-width: 768px) {
+	.navbar-nav {
+	float: none;
+	padding-left: 5px;
+	padding-right: 5px;
+	}
+}
+.navbar-brand .logo{
+	margin-left: 25px;
+	width: 430px;
+}
+img#logo {
+	height: 70px;
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+	img#logo{
+	position: absolute;
+	bottom: -42px;
+	height: 110px;
+	padding-left: 40px;
+	}
+}
+
+/* [ Carousel Styling ] */
+#carousel-override{
+	margin-top: 0px;
+}
+.carousel-control{
+	z-index: 10;
+}
+.carousel .item {
+	height: 700px;
+	background-color: transparent;
+}
+.carousel-caption {
+	right: 0%;
+	left: 0%;
+}
+
+	/*	Carousel Item 1 */
+
+	.carousel-caption.caption1 {
+  	right: 0%;
+  	left: 0%;
+  	padding-top: 150px;
+    top: 0;
+	}
+
+	.carousel-caption.caption1 h1{
+		font-family:lobster_twobold_italic;
+		font-size: 54px;
+		padding-bottom: 20px;
+		text-shadow: 0px 24px 1px rgba(0,0,0,.8);
+		color: #f6f6f6;
+	}
+	/* Extra small devices (phones, up to 480px) */
+	/* No media query since this is the default in Bootstrap */
+
+	/* Small devices (tablets, 768px and up) */
+	@media (min-width: 768px) {
+		.carousel-caption.caption1 h1 {
+			font-size: 85px;
+			}
+	}
+
+	/* Medium devices (desktops, 992px and up) */
+	@media (min-width: 992px) {
+		.carousel-caption.caption1 h1 {
+			font-size: 120px;
+			}
+	}
+
+	/* Large devices (large desktops, 1200px and up) */
+	@media (min-width: 1200px) {
+		.carousel-caption.caption1 h1 {
+			font-size: 160px;
+			}
+	}
+	p.caption1{
+		margin-bottom: 20px;
+	}
+	div.animation{
+		font-size: 25px;
+		text-shadow: 0 0 50px lightcyan;
+		text-decoration: underline;
+	}
+	/* Extra small devices (phones, up to 480px) */
+	/* No media query since this is the default in Bootstrap */
+
+	/* Small devices (tablets, 768px and up) */
+	@media (min-width: 768px) {
+		div.animation{
+			font-size: 40px;
+			padding-left: 2px;
+			padding-right: 2px;
+		}
+	}
+
+	/* Medium devices (desktops, 992px and up) */
+	@media (min-width: 992px) {
+		div.animation{
+			font-size: 50px;
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+	}
+
+	/* Large devices (large desktops, 1200px and up) */
+	@media (min-width: 1200px) {
+		div.animation{
+			font-size: 60px;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
+	/* [ Animations ] */
+	/* [ Carousel Styling ] */
+
+	.animation{
+		// opacity:0;
+		display: inline-block;
+	}
+	.slideUp{
+		opacity: 1;
+		-webkit-animation:slideUp 1.5342s 1 ease;
+		   -moz-animation:slideUp 1.5342s 1 ease;
+		    -ms-animation:slideUp 1.5342s 1 ease;
+		     -o-animation:slideUp 1.5342s 1 ease;
+		        animation:slideUp 1.5342s 1 ease;
+	}
+	@-webkit-keyframes slideUp {
+	from { opacity: 0;  -webkit-transform:  translateY(1000px); }
+	to { opacity: 1;  -webkit-transform:  translateY(0px); }
+	}
+	@-moz-keyframes slideUp {
+	from { opacity: 0;  -moz-transform:  translateY(1000px); }
+	to { opacity: 1;  -moz-transform:  translateY(0px); }
+	}
+	@-ms-keyframes slideUp {
+	from { opacity: 0;  -ms-transform:  translateY(1000px); }
+	to { opacity: 1;  -ms-transform:  translateY(0px); }
+	}
+	@-o-keyframes slideUp {
+	from { opacity: 0;  -o-transform:  translateY(1000px); }
+	to { opacity: 1;  -o-transform:  translateY(0px); }
+	}
+	@keyframes slideUp {
+	from { opacity: 0;  transform:  translateY(1000px); }
+	to { opacity: 1;  transform:  translateY(0px); }
+	}
+/* [ Marketing Container ] */
+
+h2.secondary-content{
+	font-family:lobster_twobold_italic;
+}
+.img-explosion{
+	height: 140px;
+	width: 140px;
+	position: relative;
+	margin: auto;
+	padding: 1px;
+}
+/* Web Design and Development */
+.img1.sc1{
+	position: absolute;
+	z-index: 10;
+	top: 0px;
+	left: -55px;
+	/*transition*/
+	-webkit-transition:-webkit-transform 1s;
+	   -moz-transition:   -moz-transform 1s;
+	    -ms-transition:    -ms-transform 1s;
+	     -o-transition:     -o-transform 1s;
+	        transition:        transform 1s;
+	/*transform*/
+	-webkit-transform:rotateZ(-35deg);
+	   -moz-transform:rotateZ(-35deg);
+	    -ms-transform:rotateZ(-35deg);
+	     -o-transform:rotateZ(-35deg);
+	        transform:rotateZ(-35deg);
+}
+.img2.sc1{
+	position: absolute;
+	z-index: 10;
+	top: 13px;
+	right: -56px;
+	/*transition*/
+	-webkit-transition:-webkit-transform 1s;
+	   -moz-transition:   -moz-transform 1s;
+	    -ms-transition:    -ms-transform 1s;
+	     -o-transition:     -o-transform 1s;
+	        transition:        transform 1s;
+	/*transform*/
+	-webkit-transform:rotateZ(30deg);
+	   -moz-transform:rotateZ(30deg);
+	    -ms-transform:rotateZ(30deg);
+	     -o-transform:rotateZ(30deg);
+	        transform:rotateZ(30deg);
+}
+.img3.sc1{
+	position: absolute;
+	z-index: 10;
+	top: -61px;
+	left: -36px;
+	/*transition*/
+	-webkit-transition:-webkit-transform 1s;
+	   -moz-transition:   -moz-transform 1s;
+	    -ms-transition:    -ms-transform 1s;
+	     -o-transition:     -o-transform 1s;
+	        transition:        transform 1s;
+}
+/* Email Marketing */
+.img1.sc2{
+	position: absolute;
+	z-index: 10;
+	top: 21px;
+	left: -51px;
+	/*transition*/
+	-webkit-transition:-webkit-transform 1s;
+	   -moz-transition:   -moz-transform 1s;
+	    -ms-transition:    -ms-transform 1s;
+	     -o-transition:     -o-transform 1s;
+	        transition:        transform 1s;
+	/*transform*/
+	-webkit-transform:rotateZ(-35deg);
+	   -moz-transform:rotateZ(-35deg);
+	    -ms-transform:rotateZ(-35deg);
+	     -o-transform:rotateZ(-35deg);
+	        transform:rotateZ(-35deg);
+}
+.img2.sc2{
+	position: absolute;
+	z-index: 10;
+	top: 12px;
+	right: -64px;
+	/*transition*/
+	-webkit-transition:-webkit-transform 1s;
+	   -moz-transition:   -moz-transform 1s;
+	    -ms-transition:    -ms-transform 1s;
+	     -o-transition:     -o-transform 1s;
+	        transition:        transform 1s;
+	/*transform*/
+	-webkit-transform:rotateZ(30deg);
+	   -moz-transform:rotateZ(30deg);
+	    -ms-transform:rotateZ(30deg);
+	     -o-transform:rotateZ(30deg);
+	        transform:rotateZ(30deg);
+}
+.img3.sc2{
+	position: absolute;
+	z-index: 10;
+	top: -30px;
+	left: 4px;
+	/*transition*/
+	-webkit-transition:-webkit-transform 1s;
+	   -moz-transition:   -moz-transform 1s;
+	    -ms-transition:    -ms-transform 1s;
+	     -o-transition:     -o-transform 1s;
+	        transition:        transform 1s;
+}
+/* Database Maintenace & Analytics */
+.img1.sc3{
+	position: absolute;
+	z-index: 10;
+	top: 26px;
+	left: -56px;
+	/*transition*/
+	-webkit-transition:-webkit-transform 1s;
+	   -moz-transition:   -moz-transform 1s;
+	    -ms-transition:    -ms-transform 1s;
+	     -o-transition:     -o-transform 1s;
+	        transition:        transform 1s;
+	/*transform*/
+	-webkit-transform:rotateZ(-35deg);
+	   -moz-transform:rotateZ(-35deg);
+	    -ms-transform:rotateZ(-35deg);
+	     -o-transform:rotateZ(-35deg);
+	        transform:rotateZ(-35deg);
+}
+.img2.sc3{
+	position: absolute;
+	z-index: 10;
+	top: 40px;
+	left: 91px;
+	/*transition*/
+	-webkit-transition:-webkit-transform 1s;
+	   -moz-transition:   -moz-transform 1s;
+	    -ms-transition:    -ms-transform 1s;
+	     -o-transition:     -o-transform 1s;
+	        transition:        transform 1s;
+	/*transform*/
+	-webkit-transform:rotateZ(30deg);
+	   -moz-transform:rotateZ(30deg);
+	    -ms-transform:rotateZ(30deg);
+	     -o-transform:rotateZ(30deg);
+	        transform:rotateZ(30deg);
+}
+.img3.sc3{
+	position: absolute;
+	z-index: 10;
+	top: -29px;
+	left: 3px;
+	/*transition*/
+	-webkit-transition:-webkit-transform 1s;
+	   -moz-transition:   -moz-transform 1s;
+	    -ms-transition:    -ms-transform 1s;
+	     -o-transition:     -o-transform 1s;
+	        transition:        transform 1s;
+}
+	/* Animations on hover */
+	.col-lg-4:hover div img.img1{
+			/*transform*/
+		-webkit-transform:rotateZ(-35deg) translateY(-50px);
+		   -moz-transform:rotateZ(-35deg) translateY(-50px);
+		    -ms-transform:rotateZ(-35deg) translateY(-50px);
+		     -o-transform:rotateZ(-35deg) translateY(-50px);
+		        transform:rotateZ(-35deg) translateY(-50px);
+	}
+	.col-lg-4:hover div img.img2{
+			/*transform*/
+		-webkit-transform:rotateZ(30deg) translateY(-50px);
+	   -moz-transform:rotateZ(30deg) translateY(-50px);
+	    -ms-transform:rotateZ(30deg) translateY(-50px);
+	     -o-transform:rotateZ(30deg) translateY(-50px);
+	        transform:rotateZ(30deg) translateY(-50px);
+	}
+	.col-lg-4:hover div img.img3{
+			/*transform*/
+		-webkit-transform: translateY(-30px);
+	   -moz-transform: translateY(-30px);
+	    -ms-transform: translateY(-30px);
+	     -o-transform: translateY(-30px);
+	        transform: translateY(-30px);
+	}
+.details{
+	display: none;
+}
+
+/* View Details */
+ul.details-list{
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+
+	/***********************************************************************/
+	/* Extra small devices (phones, up to 480px) */
+	/* No media query since this is the default in Bootstrap */
+
+	/* Small devices (tablets, 301px and up) */
+	@media (min-width: 410px) {
+		ul.details-list p{
+			margin-top: 6%;
+		}
+	}
+
+	/* Medium devices (desktops, 992px and up) */
+	@media (min-width: 992px) {
+		ul.details-list p{
+			margin-top: 6%;
+		}
+	}
+
+	/* Large devices (large desktops, 1200px and up) */
+	@media (min-width: 1200px) {
+		ul.details-list p{
+			margin-top: 6%;
+		}
+	}
+
+/* [ Featurette: "Fully Mobile Compatible" ] */
+div.featurette small{
+	font-size: .7em;
+}
+
+/* [ Featurette: "Landing Page" ] */
+#landing-page{
+	position:relative; /* IE8 */
+/*box-shadow*/
+	-webkit-box-shadow:10px 10px 37px 2px black;
+	   -moz-box-shadow:10px 10px 37px 2px black;
+	    -ms-box-shadow:10px 10px 37px 2px black;
+	     -o-box-shadow:10px 10px 37px 2px black;
+	        box-shadow:10px 10px 37px 2px black;
+}
+
+/* [ Popover ] */
+.popover{
+	left: 0px;
+	max-width: 100%;
+}
+#cross-browser:hover{
+	cursor: hand;
+	cursor: pointer;
+}
+#cross-browser:hover span#example{
+	text-shadow: 0 0 28px black;
+}
+div.popover-content p{
+	font-size: 10px;
+}
+
+
+/***********************************************************************/
+/* Extra small devices (phones, up to 480px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
+
+/////////////////////////////////////////////////////////////////////////////////
+// <link href="src/css/city.css" rel="stylesheet">
+
+#sky{
+	height: 400px;
+	width: auto;
+	border: 0;
+	left: 0%;
+	right: 0%;
+	top: 0%;
+	bottom: 0%;
+	padding: 0%;
+	background:    -moz-linear-gradient(top, black 0%, #00378a 100%);
+	background:     -o-linear-gradient(top, black 0%, #00378a 100%);
+	background:         linear-gradient(top, black 0%, #00378a 100%);
+  background: -webkit-linear-gradient(top, black 0%, #00378a 100%);
+}
+#skyline{
+	background:   -moz-linear-gradient(top, #00378a 0%, red 100%);
+	background:     -o-linear-gradient(top, #00378a 0%, red 100%);
+	background:         linear-gradient(top, #00378a 0%, red 100%);
+  background: -webkit-linear-gradient(top, #00378a 0%, red 100%);
+}
+#clouds-message1{
+	position: absolute;
+	margin-left: 10%;
+	margin-right: 10%;
+	color: white;
+	font-family: 'Mr De Haviland';
+	font-size: 7em;
+	line-height: 1.5em;
+}
+#clouds-message2{
+	position: absolute;
+	bottom: 20%;
+	margin-left: 15%;
+	margin-right: 10%;
+	left: 150px;
+	color: white;
+	font-family: 'Mr De Haviland';
+	font-size: 7em;
+	line-height: 1.5em;
+}
+.cloud {
+	position: absolute;
+	bottom: 150px;
+}
+.x2 {
+	right: 50px;
+}
+
+.x3 {
+	left: -250px; top: -200px;
+}
+
+.x4 {
+	left: 470px; top: -250px;
+}
+
+.x5 {
+	left: -150px; top: -150px;
+}
+
+/////////////////////////////////////////////////////////////////////////////////
+// <link href="id/004/src/css/threesixty.css" rel="stylesheet">
+
+/* [ 360 Degree View ] */
+.reel-overlay{
+  max-width: 100%;
+  height: auto;
+}
+.reel{
+  max-width: 100%;
+  height: auto;
+}
+@media \0screen {
+  img { width:auto }
+}
+#the-threesixty-reel{
+  height: auto;
+}
+.threesixty-wrapper {
+  position: relative;
+  padding-top: 50px;
+}
+.threesixty-wrapper .threesixty {
+  display: block;
+}
+img.threesixty-frame{
+  margin: auto;
 }
