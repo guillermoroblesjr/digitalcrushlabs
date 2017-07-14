@@ -22,14 +22,8 @@ export default class Carousel extends Component {
     this.state = {}
   }
 
-  componentWillMount = () => tryCatch(this, arguments, () => {})
-  componentDidMount = () => tryCatch(this, arguments, () => {})
-  componentWillReceiveProps = nextProps => tryCatch(this, arguments, () => {})
   shouldComponentUpdate = (nextProps, nextState) =>
     !_isEqual(this.props, nextProps) || _isEqual(this.state, nextState)
-  componentWillUpdate = (nextProps, nextState) => tryCatch(this, arguments, () => {})
-  componentDidUpdate = (prevProps, prevState) => tryCatch(this, arguments, () => {})
-  componentWillUnmount = () => tryCatch(this, arguments, () => {})
 
   shouldRenderNull = () => false
 

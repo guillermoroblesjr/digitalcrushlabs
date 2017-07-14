@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require(`html-webpack-plugin`)
 const ExtractTextPlugin = require(`extract-text-webpack-plugin`)
 const StringReplacePlugin = require(`string-replace-webpack-plugin`)
 const project = require(`../project.config`)
+import GitRevisionPlugin from 'git-revision-webpack-plugin'
 
 const inProject = path.resolve.bind(path, project.basePath)
 const inProjectSrc = (file) => inProject(project.srcDir, file)
@@ -76,9 +77,22 @@ config.module.rules.push({
         }],
       }),
     },
+    {
+      loader: StringReplacePlugin.replace({
+        replacements: [{
+          pattern: /__GIT_VERSION__/ig,
+          replacement(match, p1, offset, string) {
+            const version = JSON.stringify(new GitRevisionPlugin({
+              lightweightTags: true,
+            }).version())
+            console.log(`Matched a git version asset, version: ${version}`)
+            return version
+          },
+        }],
+      }),
+    },
   ],
 })
-
 
 // JavaScript
 // ------------------------------------

@@ -173,7 +173,7 @@ body{
 .container.navbar-full{
 	padding-left: 0px;
 	padding-right: 0px;
-	padding-top: 5px;
+	padding-top: 15px;
 }
 .navbar-wrapper {
 	position: absolute;
@@ -251,9 +251,10 @@ img#logo {
 	/*	Carousel Item 1 */
 
 	.carousel-caption.caption1 {
-	right: 0%;
-	left: 0%;
-	padding-top: 150px;
+  	right: 0%;
+  	left: 0%;
+  	padding-top: 150px;
+    top: 0;
 	}
 
 	.carousel-caption.caption1 h1{
@@ -327,7 +328,7 @@ img#logo {
 	/* [ Carousel Styling ] */
 
 	.animation{
-		opacity:0;
+		// opacity:0;
 		display: inline-block;
 	}
 	.slideUp{
@@ -679,7 +680,7 @@ div.popover-content p{
 	bottom: 150px;
 }
 .x2 {
-	left: 200px;
+	right: 50px;
 }
 
 .x3 {

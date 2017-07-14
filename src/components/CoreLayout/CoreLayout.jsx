@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import _isEqual from 'lodash.isequal'
 import { IndexLink, Link } from 'react-router'
+import { Component as Nav } from 'components/Nav/async'
+import { Component as Footer } from 'components/Footer/async'
 import './CoreLayout.scss'
 
 export default class CoreLayout extends Component {
@@ -35,7 +37,9 @@ export default class CoreLayout extends Component {
         <div className="body-wrapper">
           {/* <!-- Body background color -->*/}
           <div className="body-wrapper2">
+            <Nav />
             {this.props.children}
+            <Footer />
           </div>
         </div>
       </div>
