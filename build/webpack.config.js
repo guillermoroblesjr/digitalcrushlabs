@@ -53,45 +53,71 @@ const config = {
 // HTML
 // ------------------------------------
 
+const htmlUse = [
+  `raw-loader`,
+  {
+    loader: StringReplacePlugin.replace({
+      replacements: [{
+        pattern: /__STATIC_ASSETS__/ig,
+        replacement(match, p1, offset, string) {
+          let url
+          switch (project.env) {
+          case `development`:
+            url = `http://localhost:3000/`
+            break
+          default:
+            url = ``
+          }
+          console.log(`Matched a HTML static asset, url: ${url}`)
+          return url
+        },
+      }],
+    }),
+  },
+  {
+    loader: StringReplacePlugin.replace({
+      replacements: [{
+        pattern: /__GIT_VERSION__/ig,
+        replacement(match, p1, offset, string) {
+          const version = JSON.stringify(new GitRevisionPlugin({
+            lightweightTags: true,
+          }).version())
+          console.log(`Matched a git version asset, version: ${version}`)
+          return version
+        },
+      }],
+    }),
+  },
+]
+
+if (project.env === `production`) {
+  htmlUse.push({
+    loader: StringReplacePlugin.replace({
+      replacements: [{
+        pattern: /<!--__STAT_COUNTER__-->/ig,
+        replacement(match, p1, offset, string) {
+          const script = `<script type="text/javascript">
+            var sc_project=9285275;
+            var sc_invisible=1;
+            var sc_security="fea81a6d";
+            var scJsHost = (("https:" == document.location.protocol) ?
+            "https://secure." : "http://www.");
+            document.write("<sc"+"ript type='text/javascript' src='" +
+            scJsHost+
+            "statcounter.com/counter/counter.js'></"+"script>");
+          </script>`
+          console.log(`Matched a stat counter asset`)
+          return script
+        },
+      }],
+    }),
+  })
+}
+
 config.module.rules.push({
   test: /\.(html|htm)$/,
   exclude: /node_modules/,
-  use: [
-    `raw-loader`,
-    {
-      loader: StringReplacePlugin.replace({
-        replacements: [{
-          pattern: /__STATIC_ASSETS__/ig,
-          replacement(match, p1, offset, string) {
-            let url
-            switch (project.env) {
-            case `development`:
-              url = `http://localhost:3000/`
-              break
-            default:
-              url = ``
-            }
-            console.log(`Matched a HTML static asset, url: ${url}`)
-            return url
-          },
-        }],
-      }),
-    },
-    {
-      loader: StringReplacePlugin.replace({
-        replacements: [{
-          pattern: /__GIT_VERSION__/ig,
-          replacement(match, p1, offset, string) {
-            const version = JSON.stringify(new GitRevisionPlugin({
-              lightweightTags: true,
-            }).version())
-            console.log(`Matched a git version asset, version: ${version}`)
-            return version
-          },
-        }],
-      }),
-    },
-  ],
+  use: htmlUse,
 })
 
 // JavaScript
