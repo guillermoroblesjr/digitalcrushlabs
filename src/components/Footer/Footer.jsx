@@ -32,7 +32,7 @@ export default class Footer extends Component {
       <div className="Footer">
         <div className="container">
           <footer>
-            <p className="pull-right"><a href="#">Back to top</a></p>
+            {/* <p className="pull-right"><a href="#">Back to top</a></p>*/}
             <p>&copy; {new Date().getFullYear()} &#8212; Digital Crush Labs <span id="info" /></p>
           </footer>
         </div>

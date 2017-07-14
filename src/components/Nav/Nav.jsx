@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import _isEqual from 'lodash.isequal'
+import { Link } from 'react-router'
 import { tryCatch } from 'utils/debug'
 import { STATIC_ASSETS } from 'constants/basePath'
 import './Nav.scss'
@@ -42,9 +43,9 @@ export default class Nav extends Component {
                     <span className="icon-bar" />
                     <span className="icon-bar" />
                   </button>
-                  <a className="navbar-brand logo" href="http://digitalcrushlabs.com">
+                  <Link to="/" className="navbar-brand navbar-brand logo">
                     <img id="logo" src={`${STATIC_ASSETS}/img/DigitalCrushLabs-Logo-733x245-dark2.png`} />
-                  </a>
+                  </Link>
                 </div>
                 <div className="navbar-collapse collapse no-height">
                   <ul className="nav navbar-nav">
